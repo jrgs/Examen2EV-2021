@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+// María del Camren García Mora 
+// Examen Entornos 20-21
+
 namespace Ejercicio10
 {
     public partial class Form1 : Form
@@ -16,17 +19,17 @@ namespace Ejercicio10
             InitializeComponent();
         }
 
-         // Declaramos la constante que convierte entre euros y dolares.
-        //
-        const double CONV1 = 0.826;  // 1 dolar, 0,826 euros
-        const double CONV2 = 1.1485; // 1 libra, 1,1485 euros
+        // Declaramos la constante que convierte entre euros y dolares.
+        // Constantes cambiadas con MCGM2021
+        const double CONV1_MCGM2021 = 0.826;  // 1 dolar, 0,826 euros
+        const double CONV2_MCGM2021 = 1.1485; // 1 libra, 1,1485 euros
 
         private void btDolaresAEuros_Click(object sender, EventArgs e)
         {
             double euros, dolares;
 
             dolares = double.Parse(tImporte.Text);
-            euros = dolares * CONV1;
+            euros = dolares * CONV1_MCGM2021;
 
             tResultado.Text = euros.ToString();
         }
@@ -36,7 +39,9 @@ namespace Ejercicio10
             double euros, dolares;
 
             euros = double.Parse(tImporte.Text);
-            dolares = euros * CONV1;
+
+            //Modificado a división
+            dolares = euros / CONV1_MCGM2021;
 
             tResultado.Text = dolares.ToString();
         }
@@ -46,7 +51,9 @@ namespace Ejercicio10
             double euros, libras;
 
             libras = double.Parse(tImporte.Text);
-            euros = libras * CONV1;
+
+            // Cambiada por la segunda constante
+            euros = libras * CONV2_MCGM2021;
 
             tResultado.Text = euros.ToString();
         }
@@ -56,7 +63,9 @@ namespace Ejercicio10
             double euros, libras;
 
             euros = double.Parse(tResultado.Text);
-            libras = euros / CONV1;
+
+            // Cambiada por la segunda constante
+            libras = euros / CONV2_MCGM2021;
 
             tImporte.Text = libras.ToString();
         }
